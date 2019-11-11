@@ -1,0 +1,253 @@
+"use strict";
+// Cистема уравнений
+/*{
+  let x;
+  if (a > b)
+    x = a + b / 2 * 2;
+  else if (a === b)
+    x = 400;
+  else
+    x = a - b + 2 / b * 4;
+}*/
+
+// Попадание точки в область
+//1
+{
+  const  xCoordinate  =  parseFloat ( prompt ( ' Input x ' , ' ' ));
+  const  yCoordinate  =  parseFloat ( prompt ( ' Input y ' , ' ' ));
+  if ( (xCoordinate >= - 4 ) && (xCoordinate <= 4)  &&  (yCoordinate >= 0) && (yCoordinate <= 4)  && ( xCoordinate >= yCoordinate - 4 ) && ( xCoordinate <= 4 - yCoordinate))
+    alert('Точка попадает в область');
+  else
+    alert('Точка НЕ попадает в область');
+}
+
+//2
+
+{
+  const  xCoordinate  =  parseFloat ( prompt ( ' Input x ' , ' ' ));
+  const  yCoordinate  =  parseFloat ( prompt ( ' Input y ' , ' ' ));
+  if (( xCoordinate >= -1 ) && ( xCoordinate <= 1 ) && ( yCoordinate >= 0 ) && ( yCoordinate <= 1 ) && ( xCoordinate >= -yCoordinate ) && (xCoordinate <= yCoordinate))
+    alert('Точка попадает в область');
+  else if (( xCoordinate >= -1 ) && ( xCoordinate <= 1 ) && ( yCoordinate < 0 ) && ( yCoordinate >= -1 ) && ( xCoordinate <= -yCoordinate ) && (xCoordinate >= yCoordinate))
+    alert('Точка попадает в область');
+  else
+    alert('Точка НЕ попадает в область');
+
+}
+//3
+{
+  const  xCoordinate  =  parseFloat ( prompt ( ' Input x ' , ' ' ));
+  const  yCoordinate  =  parseFloat ( prompt ( ' Input y ' , ' ' ));
+  if ((xCoordinate ** 2) <= 1 - (yCoordinate ** 2))
+    alert('Точка попадает в область');
+  else if (( xCoordinate >= -2) && ( xCoordinate <= 0 ) && ( yCoordinate >= -2 ) && ( yCoordinate <= 0 ) && (xCoordinate >= -2 - yCoordinate))
+    alert('Точка попадает в область');
+  else
+   alert('Точка НЕ попадает в область');
+}
+
+// При помощи prompt запросить у пользователя номер дня недели.
+// Вывести при помощи alert название дня недели.
+// если пользователь ввел некорректное значение вывести сообщение "Такого дня недели не существует!"
+
+{
+  const  dayOfWeek  =  parseFloat ( prompt ( ' номер дня недели ' , ' ' ));
+/*  let namesOfWeek = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
+      nameOfDay = namesOfWeek[dayOfWeek - 1];
+  if typeof nameOfDay === "string"
+    alert (nameOfDay);
+  else
+    alert ('Такого дня недели не существует!');*/
+
+  switch (dayOfWeek) {
+    case 1:
+      alert('Пн');
+      break;
+    case 2:
+      alert('Вт');
+      break;
+    case 3:
+      alert('Ср');
+      break;
+    case 4:
+      alert('Чт');
+      break;
+    case 5:
+      alert('Пт');
+      break;
+    case 6:
+      alert('Сб');
+      break;
+    case 7:
+      alert('Вс');
+      break;
+    default:
+      alert('Такого дня недели не существует!');
+      break;
+  }
+}
+
+// Пользователь вводит два числа. Найти и вывести максимальное из двух чисел.
+{
+  const firstNumber  =  parseFloat ( prompt ( ' Input first number ' , ' ' ));
+  const  secondNumber  =  parseFloat ( prompt ( ' Input second nymber ' , ' ' ));
+  if (firstNumber > secondNumber)
+    alert(`Число ${firstNumber} больше`);
+  else if (firstNumber < secondNumber)
+    alert(`Число ${secondNumber} больше`);
+  else if (firstNumber === secondNumber)
+    alert(`Числа ${secondNumber} равны`);
+  else
+    alert('Чепухня какая-то');
+}
+// Найти максимальное из двух чисел. Учтите вариант равенства чисел
+// !!!! Вроде тоже самое что и вверху
+
+// В первом подъезде квартиры с 1 по 20.
+// Во втором с 21 по 48. В третьем с 49 по 90.
+// Пользователь вводит номер квартиры.
+// Программа должна указать в каком подъезде находится данная квартира.
+// Программа должна учитывать вариант ввода чисел за пределами диапазона 1..90.
+
+{
+  const numberOfFlat  =  parseFloat ( prompt ( ' ВВедите номер квартиры' , ' ' ));
+  if (( numberOfFlat >= 1 ) && (numberOfFlat <= 20))
+    alert('Квартира в первом подъезде');
+  else if ((numberOfFlat >= 21) && (numberOfFlat <= 48))
+    alert('Квартира во втором подъезде');
+  else if ((numberOfFlat >= 49) && (numberOfFlat <= 90))
+    alert('Квартира в тртетьем подъезде');
+  else
+    alert('охоже вы ошиблись адрессом');
+}
+
+// Пользователь вводит логин и пароль.
+// Если логин и пароль совпадают с указанными ниже, то выводится «Добро пожаловать».
+// Если не совпадают – то «Ошибка входа»
+
+{
+  let log  =  prompt ( ' Input login' , ' ' ), pass;
+  switch (log){
+    case 'ivan':
+      pass = prompt ( ' Input password ' , ' ' );
+      if (pass === '334455')
+        alert('Добро пожаловать');
+      else
+        alert('Ошибка входа. Неверный пароль!');
+      break;
+    case 'alex':
+      pass = prompt ( ' Input password ' , ' ' );
+      if (pass === '777')
+        alert('Добро пожаловать');
+      else
+        alert('Ошибка входа. Неверный пароль!');
+      break;
+    case 'petr':
+      pass = prompt ( ' Input password ' , ' ' );
+      if (pass === 'b5678')
+        alert('Добро пожаловать');
+      else
+        alert('Ошибка входа. Неверный пароль!');
+      break;
+    default:
+      alert('Пользователь не найден');
+      break;
+  }
+}
+// Если ночью будет время, надо пропробовать запилить все-таки с масиивом и циклом
+
+// Пользователь вводит год рождения.
+// Программа показывает количество лет и если лет больше или равно 16,
+// то пишет – «добро пожаловать», если нет – «вход воспрещен».
+
+{
+  const year  =  parseFloat ( prompt ( ' ВВедите год рождения, в четырехзначном формате' , ' ' ));
+  let date = new Date();
+  let age = date.getFullYear() - year;
+  alert(`Ваш возраст - ${age} лет`);
+  if (age < 16)
+    alert('вход воспрещен');
+  else
+    alert('добро пожаловать');
+}
+
+// Создайте программу, которая выводит надбавку за стаж.
+// Пользователь вводит стаж работы, а программа пишет ему надбавку.
+
+{
+  const seniority  =  parseFloat ( prompt ( ' ВВедите количество полных лет вашего рабочего стажа' , '0' ));
+  let allowance = 0;
+  if (seniority < 3){
+    //
+  }
+  else if (seniority < 10)
+    allowance = 10;
+  else if (seniority < 20)
+    allowance = 20;
+  else
+    allowance = 25;
+  alert(`Ваша надбавка за стаж работы состовляет  ${allowance}%`);
+}
+
+// Написать программу которая будет склонять слово “товар”
+// в зависимости от количества товаров в корзине.
+// Например 1 - товар, 4 - товара, 6 - товаров.
+
+{
+  let quantityOfGoods = 0,
+    goods = 'нет товаров';
+  // кол-во товаров както меняеться
+  if (quantityOfGoods != 0)
+    switch (quantityOfGoods % 10){
+      case 1:
+        if ((quantityOfGoods >= 11) && (quantityOfGoods <= 14)){
+          goods = quantityOfGoods + ' товаров';
+          break;
+        }
+        goods = quantityOfGoods + ' товар';
+        break;
+      case 2:
+      case 3:
+      case 4:
+        if ((quantityOfGoods >= 11) && (quantityOfGoods <= 14)){
+          goods = quantityOfGoods + ' товаров';
+          break;
+        }
+        goods = quantityOfGoods + ' товара';
+        break;
+      case 5:
+      case 6:
+      case 7:
+      case 8:
+      case 9:
+      case 0:
+        goods = quantityOfGoods + ' товаров';
+        break;
+  }
+  alert('В вашей козине '+ goods);
+}
+
+// Написать программу эмулирующую работу кофейного автомата
+
+{
+
+  const itemOfDrink = parseFloat(prompt('выберите номер напитка', ''));
+  const coffeCard = funct(itemOfDrink); // получаем карту напитка в виде массива данных [название, цена, сахар(true/false), молоко(true/false)]
+  alert('Вы выбрали ' + coffeCard[0] + '. ЦЕНА ' + coffeCard + ' грн');
+  let sugar = 0, milk = false;
+  if (coffeCard[2] === true)
+    sugar = parseFloat(prompt('выберите количество сахара', ''));
+  if (coffeCard[3] === true)
+    milk = parseFloat(prompt('Добавить молоко?', ''));
+  let balance = coffeCard[1];
+  while (balance > 0){
+    alert('Осталось заплатить ' + balance + 'грн')
+    balance = balance - funcGetMoney(); // funcGetMoney(); - выдает  информацию о полученных автоматом денег
+  }
+  functMakeCoffee(itemOfDrink, sugar, milk);
+  if (balance < 0) {
+    alert('Заберите сдачу ' + (-balance) + 'грн');
+    functGetBackMoney(balance);// функция возврата денег
+  }
+  alert('Приятного аппетита');
+}
