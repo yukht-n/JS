@@ -23,12 +23,22 @@
     function isEven(numb){
         return ((numb % 2) == 0);
     };
-    console.log(isEven(2));
+//   console.log(isEven(2));
 
     //     Задание 6
     // Дан массив с целыми числами. Создайте из него новый массив,
     // где останутся лежать только четные из этих чисел.
     // Для этого используйте вспомогательную функцию isEven из предыдущей задачи.
+    const arr = [1,2,3,4,5,6,7];
+    function makeNewArr(arr,callbackFn) {
+        const newArr = [];
+        for (let item of arr){
+            if (callbackFn(item))
+                newArr.push(item);
+        };
+        return newArr;
+    };
+    console.log(makeNewArr(arr, isEven));
 
     //     Задание 7
     // Сделайте функцию getDivisors, которая параметром принимает число и
