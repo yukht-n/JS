@@ -59,6 +59,21 @@
     // Дана строка. Сделайте заглавным первый символ каждого слова этой строки.
     // Для этого сделайте вспомогательную функцию ucfirst, которая будет получать строку,
     // делать первый символ этой строки заглавным и возвращать обратно строку с заглавной первой буквой.
+    function ucfirst(str) {
+        if (!str) return str;
+        const space = ' ';
+        let newStr = '';
+        for (let i = 0; i < str.length; i++){
+            if ((str[i-1] == space) || (i == 0))
+                {newStr += str[i].toUpperCase();
+                    console.log(i);}
+            else newStr += str[i];
+        }
+        return newStr;
+    }
+
+    console.log(ucfirst("ghb fjjk k dfkl "));
+
 
     //     Задание 15
     // Дана строка вида 'var_text_hello'. Сделайте из него текст 'varTextHello'.
