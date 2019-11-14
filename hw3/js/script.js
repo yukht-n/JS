@@ -62,6 +62,22 @@
 
     //     Задание 15
     // Дана строка вида 'var_text_hello'. Сделайте из него текст 'varTextHello'.
+    function changeStr(str) {
+        if (!str) return str;
+        const space = '_';
+        let newStr = '';
+        for (let i = 0; i < str.length; i++){
+            if (str[i] == space) {
+                i++;
+                newStr += str[i].toUpperCase();
+            }
+            else newStr += str[i];
+        }
+        return newStr;
+    }
+
+    console.log(changeStr('var_text_hello'));
+
 
     //     Задание 15
     // Сделайте функцию inArray, которая определяет, есть в массиве элемент с заданным текстом или нет.
