@@ -105,5 +105,16 @@
     // Возвращает она массив значений, для которых предикат вернет true.
     //     Функция не должна изменять исходный массив
 
+    let input = [1, 2, 3, 4, 5, 6];
+    function isEven(x) { return x % 2 == 0; } // проверяет на четность
+    console.log(filter(input, isEven)); // [2, 4, 6]
+    function filter(arr, callbackFn) {
+        const newArr = [];
+        for (let elem of arr){
+            if (callbackFn(elem))
+                newArr.push(elem);
+        }
+        return newArr;
+    }
 
 })();
