@@ -77,10 +77,31 @@
     // и так до бесконечности. Начальное число, с которого начинать отсчет, и шаг,
     // задается при создании генератора. Шаг можно не указывать, тогда он будет равен одному.
     // Начальное значение по умолчанию равно 0. Генераторов можно создать сколько угодно.
+    let generator = sequence(10,3);
+    function sequence(start = 0, step = 1) {
+        start -= step;
+        return function () {
+            return start += step;
+        }
+    }
+
+    console.log(generator());
+    console.log(generator());
+    console.log(generator());
+    console.log(generator());
 
     //     Задание 18
     // Также, нужна функция take(gen, x) которая вызвает функцию gen заданное число (x) раз и
     // возвращает массив с результатами вызовов.
+    let gen2 = sequence(0, 2);
+    function take(fx,numb){
+        const arr = [];
+        for (let i = 0; i < numb; i++){
+            arr.push(fx());
+        }
+        return arr;
+    }
+    console.log(take(gen2, 5)); // [0, 2, 4, 6, 8 ]
 
     //     Задание 19
     // Напиши функцию map(fn, array), которая принимает на вход функцию и массив,
