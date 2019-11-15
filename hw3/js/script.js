@@ -86,6 +86,20 @@
     // Напиши функцию map(fn, array), которая принимает на вход функцию и массив,
     // и обрабатывает каждый элемент массива этой функцией, возвращая новый массив. Пример:
     // Обрати внимание: функция не должна изменять переданный ей массив:
+    function square(x) { return x *x; }; // возведение в квадрат
+    function map(fn, array) {
+        const newArr = [];
+        for(let item of array) {
+            const newItem = fn(item);
+            newArr.push(newItem)
+        }
+        return newArr;
+        };
+    console.log(map(square, [1, 2, 3, 4])); // [1, 4, 9, 16]
+    console.log(map(square, [])); // []
+    let arr = [1, 2, 3];
+    console.log(map(square, arr)); // [1, 4, 9]
+    console.log(arr); // [1, 2, 3]
 
     //     Задание 20
     // Напиши функцию fmap(a, gen), которая принимает на вход 2 функции,
