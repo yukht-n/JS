@@ -6,7 +6,7 @@
     function recur(n) {
         if (n == 1)
             return console.log(n);
-        return console.log(n), recur(n-1);
+        return console.log(n), recur(n - 1);
     }
     recur(5);
 
