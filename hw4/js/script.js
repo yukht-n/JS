@@ -54,4 +54,8 @@
 // 21. Задача (функции работы с массивами)
 // Дан объект {js:'test', jq: 'hello', css: 'world'}. Получите массив его ключей.
 
+    const ob = {js:'test', jq: 'hello', css: 'world'};
+    const arr = Object.keys(ob);
+    console.log(arr);
+
 })();
