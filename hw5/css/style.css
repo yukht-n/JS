@@ -5,14 +5,32 @@ body{
 .coffeMachine{
     margin-top: 10%;
     background-color: darkgray;
-    height: 400px;
-}
-#coffeeTable{
-    float: left;
-    width: 100%;
+    height: 500px;
     text-align: center;
 }
-#coffeeTable .coffeeName{
+.head{
+    width: 100%;
+    float: left;
+}
+.scoreboard{
+    background-color: white;
+    width: 200px;
+    height: 40px;
+    float: left;
+    margin-left: 30px;
+    margin-top: 20px;
+}
+.cashAcceptor{
+    width: 50px;
+    margin-top: 20px;
+    margin-left: 240px;
+    background-color: darkgreen;
+}
+
+/*#coffeeTable{
+    width: 100%;
+}*/
+ .coffeeName{
     float: left;
     background-color: saddlebrown;
     height: 105px;
@@ -20,7 +38,7 @@ body{
     margin-right: 30px;
     margin-top: 20px;
 }
-#coffeeTable .coffeeName:nth-child(odd){
+.coffeeName:nth-child(odd){
     margin-left: 30px;
 }
 #coffeeTable h1{
@@ -28,15 +46,11 @@ body{
     padding: 30px;
 }
 
-#cupCoffee{
-    float: left;
-}
 .cupCoffee{
+    float: left;
     background-color: antiquewhite;
     height: 100px;
     width: 100px;
     margin-top: 30px;
     margin-left: 100px;
-
-
 }
