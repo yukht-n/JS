@@ -34,6 +34,10 @@
     function delay() {
         setTimeout(function (){console.log(1);},2000);
     }
+    const ok = document.getElementById('okBtn');
+    const frm = document.getElementById('cashAcceptor');
+
+ //   ok.addEventListener("click", (event) => )
     function money(balance){
         while (balance > 0){
             scoreboard.innerHTML = 'Осталось заплатить ' + balance + 'грн';
@@ -41,8 +45,8 @@
             // balance = balance - document.getElementById('cashAcceptor').addEventListener('click',(event) => {
             //     return prompt('Money', '');
             // });
+
             balance = balance - prompt('Money', '');
-            // funcGetMoney(); - выдает  информацию о полученных автоматом денег
         }
         if (balance < 0) {
             scoreboard.innerHTML = 'Заберите сдачу ' + (-balance) + 'грн';
@@ -59,7 +63,6 @@
         setTimeout(money, 5000, id.price);
     };
     scoreboard.innerHTML = 'выберите номер напитка';
-//    const clickBtn = document.getElementById('click');
 
 
     coffee1.id.addEventListener('click',(event) => {

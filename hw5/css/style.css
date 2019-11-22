@@ -22,9 +22,14 @@ body{
 }
 .cashAcceptor{
     width: 50px;
+    float: left;
     margin-top: 20px;
-    margin-left: 240px;
     background-color: darkgreen;
+}
+#okBtn{
+    width: 54px;
+    float: left;
+    height: 20px;
 }
 
 /*#coffeeTable{
