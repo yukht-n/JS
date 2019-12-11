@@ -7,9 +7,9 @@ const modalContent = document.querySelector('.modal-content');
 let n = 1; // переменная сортировки
 
 //------------- ADD EVENT HANDLERS ----------------
-headOfTable.addEventListener('click', definitionOfEvent);
+headOfTable.addEventListener('click', onClickHead);
 span.addEventListener('click', closeModalWindow);
-table.addEventListener('click', definitionOfEvent);
+table.addEventListener('click', onClickTable);
 //------------- ADD EVENT HANDLERS ----------------
 
 
@@ -19,9 +19,8 @@ userFromServer().then(function (res) {
 
 
 async function userFromServer(id='') {
-    let result = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
+    return await fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
         .then(response => response.json());
-    return result
 }
 
 function printUsers(data) {
@@ -35,24 +34,37 @@ function printUsers(data) {
         `, '');
 }
 
-function definitionOfEvent(event) {
-    console.log(event.target.hasAttribute('data-id'));
+// function definitionOfEvent(event) {
+//     console.log(event.target.hasAttribute('data-id'));
+//     event.preventDefault();
+//     if (event.target.hasAttribute('data-id')) {
+//         return sortBy(event.target.closest('td').getAttribute('data-id'));
+//     } else {
+//  //       return popUp(event.target.closest('tr').getAttribute('data-id'));
+//         return userFromServer(event.target.closest('tr').getAttribute('data-id')).then(function (res) {
+//             modalWindow.style.display = 'block';
+//             modalContent.innerHTML = printFullInfo(res)
+//         });
+//     }
+// }
+
+function onClickTable(event) {
     event.preventDefault();
-    if (event.target.hasAttribute('data-id')) {
-        return sortBy(event.target.closest('td').getAttribute('data-id'));
-    } else {
- //       return popUp(event.target.closest('tr').getAttribute('data-id'));
-        return userFromServer(event.target.closest('tr').getAttribute('data-id')).then(function (res) {
-            modalWindow.style.display = 'block';
-            modalContent.innerHTML = printFullInfo(res)
-        });
-    }
+    return userFromServer(event.target.closest('tr').getAttribute('data-id')).then(function (res) {
+        modalWindow.style.display = 'block';
+        modalContent.innerHTML = printFullInfo(res)
+    });
+}
+
+function onClickHead(event) {
+    event.preventDefault();
+    return sortBy(event.target.closest('td').getAttribute('data-id'));
 }
 
 function sortBy(id) {
-    dataFromServer().then(function (res) {
+    userFromServer().then(function (res) {
         res.sort((a, b) => a[id] > b[id] ? (n) : (-n));
-        n = -n
+        n = -n;
         table.innerHTML = printUsers(res)
     });
     }
@@ -64,7 +76,7 @@ function sortBy(id) {
 //     });
 // }
 
-function printFullInfo(user) { // надобы переписть в рекурсию
+function printFullInfo(user) { // надобы переписть лучше рекурсию
     let html = '';
     for (let [key, value] of Object.entries(user)) {
         if (typeof value === 'object')
