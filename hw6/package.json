@@ -1,5 +1,5 @@
 {
-  "name": "10",
+  "name": "hw6",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,16 +7,16 @@
     "dev": "parcel -p 3000 watch *.html"
   },
   "keywords": [],
-  "author": "Eugene Nakoneschniy",
+  "author": "Nikita Yukht",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.0.0",
+    "@babel/core": "^7.7.5",
     "@babel/plugin-proposal-class-properties": "^7.7.4",
-    "@babel/plugin-transform-runtime": "^7.7.4",
+    "@babel/plugin-transform-runtime": "^7.7.6",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-runtime": "^6.23.0"
   },
   "dependencies": {
-    "@babel/runtime": "^7.7.4"
+    "@babel/runtime": "^7.7.6"
   }
 }
